@@ -29,12 +29,12 @@ console.log(typeof idade);
 /*
 d) Reflita: por que esse tipo foi impresso? Escreva a resposta em um comentário de código.
 
-R= porque  a funcao prompt sempre retorna uma string, caso desejamos obter o valor de idade,sem ser string devemos comberter com o metodo Number*/
+R= porque  a funcao prompt Sempre retorna uma string, caso desejamos obter o valor de idade,sem ser string devemos comberter com o metodo Number*/
 
 //console.log("Olá, meu nome é ", nome,  "e a minha idade é", idade)
 
 
-//2.Escreva um programa que faça 3 perguntas de Sim ou Não, armazenado em uma variável. Por exemplo: "Você está //usando uma roupa azul hoje?". Depois, siga os passos:*/
+//2.Esscreva um programa que faça 3 perguntas de Sim ou Não, armazenado em uma variável. Por exemplo: "Você está //usando uma roupa azul hoje?". Depois, siga os passos:*/
 
 let primeiraPergunta = prompt(" voce gosta de alface?")
 console.log(primeiraPergunta)
@@ -64,8 +64,13 @@ console.log(b, a, c )
 
 let num1 = prompt("Digite o primeiro numero")
 let num2 = prompt("Digite o segundo numero")
-let res = Number(num1) + Number(num2)
-console.log(res)
+let resSoma = Number(num1) + Number(num2)
+console.log(resSoma)
+
+let num3 = prompt("Digite o primeiro numero")
+let num4 = prompt("Digite o segundo numero")
+let resMult = Number(num3) * Number(num4)
+console.log(resMult)
 
 
 
