@@ -27,7 +27,7 @@ largura = Number(prompt("Digite a largura"))
   
   
 }
-console.log(calculaAreaRetangulo( 3,5));
+
 
 
 // EXERCÍCIO 02
@@ -130,7 +130,6 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 console.log(string1==string2)
 }
-
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
