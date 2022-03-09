@@ -1,0 +1,82 @@
+
+.nav{
+    background-color: rgb(64, 64, 202);
+    color: rgb(80, 76, 76);
+    margin: 10px 10px;
+    padding: 10px;
+    border: 2px solid  rgb(85, 82, 82);
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    color: yellow;
+    padding: 10px;
+    background-color: rgb(73, 73, 221);
+}
+em{
+    font-size: 30px;
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.titulo-logo{
+    font-size: 20px;
+}
+.table-style{
+    border: 3px solid rgb(73, 73, 221);
+}
+.table-descricao{
+    background-color: red;
+}
+#social-icons{
+    text-align: center;
+}
+footer{
+    background-color: rgb(73, 73, 221);
+    fposition:absolute;
+	bottom:0;
+	width:100%;
+}
+#footer-icons{
+    text-align: center;
+    padding: 10px;
+}
+.funcionarios{
+    color: gray;
+}
+
+.formulario{
+    text-align: center;
+    font-weight: bold;
+}
+#preco{
+
+    background-color: rgb(73, 73, 221);
+    width: 300px;
+
+    margin-left: 56px
+}
+
+#descricao{
+    background-color: rgb(73, 73, 221);
+    width: 300px;
+    margin-left: 8px;
+}
+#quantidade{
+    background-color: rgb(73, 73, 221);
+    width: 300px;
+}
+#link-foto{
+    background-color: rgb(73, 73, 221);
+    width: 300px;
+    margin-left: 54px;
+    
+}
+button{
+    background-color: rgb(73, 73, 221)  ;
+    color: rgb(198, 198, 211);
+    border-radius: 30px;
+    margin: 10px;
+    padding: 8px;
+}
