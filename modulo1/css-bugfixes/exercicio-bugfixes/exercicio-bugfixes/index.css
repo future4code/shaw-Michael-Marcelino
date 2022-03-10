@@ -19,6 +19,9 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top: white;
+    border-left: white;
+    border-right: white;
 }
 
 button:focus {
@@ -26,7 +29,8 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 70px;
+    
 }
 
 div>p:first-child {
@@ -34,7 +38,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: white;
 }
 
 .botao-amarelo {
@@ -61,6 +65,7 @@ div img {
 
 .icone {
     height: 15px;
+    width: 15px;
 }
 
 
@@ -103,6 +108,7 @@ div:last-child {
 
 table {
     width: 60%;
+    text-align: center;
 }
 
 td button {
