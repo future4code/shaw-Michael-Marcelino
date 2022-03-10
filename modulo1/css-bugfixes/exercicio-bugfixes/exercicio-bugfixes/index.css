@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: 'Roboto', sans-serif ;
+}
 
 h2 {
     background-color: #fe7e02;
@@ -19,9 +22,10 @@ h2 {
 input {
     height: 20px;
     width: 500px;
-    border-top: white;
-    border-left: white;
-    border-right: white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: solid 3px;
 }
 
 button:focus {
@@ -49,8 +53,8 @@ div img {
     font-size: 20px;
     color: white;
     position: absolute;
-    left: 848px;
-    bottom: -50px;
+    left: 766px;
+    bottom: -100px;
 }
 
 .botao-amarelo:hover {
@@ -104,11 +108,13 @@ div img {
 div:nth-child(2),
 div:last-child {
     text-align: center;
+    
 }
 
 table {
     width: 60%;
     text-align: center;
+    margin: auto;
 }
 
 td button {
@@ -117,6 +123,11 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+td button:hover{
+
+    background-color: #d4b425;
+
 }
 
 .container-do-search {
