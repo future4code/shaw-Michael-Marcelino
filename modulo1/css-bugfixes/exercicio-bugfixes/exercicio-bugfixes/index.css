@@ -45,8 +45,8 @@ div img {
     font-size: 20px;
     color: white;
     position: absolute;
-    left: 521px;
-    bottom: -108px;
+    left: 848px;
+    bottom: -50px;
 }
 
 .botao-amarelo:hover {
@@ -56,6 +56,7 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+    padding-top: 125px;
 }
 
 .icone {
