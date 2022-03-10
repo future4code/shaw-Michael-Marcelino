@@ -1,24 +1,24 @@
-// let array
-// console.log('a. ', array) = undefined
+let array
+console.log('a. ', array) = undefined
 
-// array = null
-// console.log('b. ', array) = zero pq é null
+array = null
+console.log('b. ', array) = zero pq é null
 
-// array = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] 
-// console.log('c. ', array.length) = retorna 11 pq e o tamanho do arraay
+array = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] 
+console.log('c. ', array.length) = retorna 11 pq e o tamanho do arraay
 
-// let i = 0
-// console.log('d. ', array[i])  = retorna 3 pq esta no indice zero
+let i = 0
+console.log('d. ', array[i])  = retorna 3 pq esta no indice zero
 
-// array[i+1] = 19
-// console.log('e. ', array)  = 19 pq e o novo valor da posicao 1
+array[i+1] = 19
+console.log('e. ', array)  = 19 pq e o novo valor da posicao 1
 
-// const valor = array[i+6]
-// console.log('f. ', valor) = 9 pq é o novo valor da posicao 6 do array
-// 2.
-// const frase = prompt("Digite uma frase")
+const valor = array[i+6]
+console.log('f. ', valor) = 9 pq é o novo valor da posicao 6 do array
+2.
+const frase = prompt("Digite uma frase")
 
-// console.log(frase.toUpperCase().replaceAll("A", "I"), frase.length) R= SUBI NUM ÔNIBUS EM MIRROCOS 27
+console.log(frase.toUpperCase().replaceAll("A", "I"), frase.length) R= SUBI NUM ÔNIBUS EM MIRROCOS 27
 
 
 /* let email = prompt("Qual seu email?")
@@ -37,7 +37,12 @@ arraayComidas.splice(1,1, novaComida)
 
 console.log(arraayComidas)
  */
- 
+  function abacate( abacate){
+
+    console.log(' abacate gostoso');
+    return abacate
+  }
+
 let listaDeTarefas = []
 let remover
 
@@ -53,4 +58,4 @@ Number(remover)
 
 listaDeTarefas.splice(remover,remover)
 
-console.log(listaDeTarefas)
+console.log(listaDeTarefas)     
