@@ -41,6 +41,7 @@ footer{
 #footer-icons{
     text-align: center;
     padding: 10px;
+    rgin-top: 4px;
 }
 .funcionarios{
     color: gray;
