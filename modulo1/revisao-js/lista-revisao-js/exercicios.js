@@ -112,6 +112,7 @@ function retornaPessoaAnonimizada(pessoa) {
   return clonePessoa;
 }
 
+
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
   const permissao = pessoas.filter((pessoa) => {});
