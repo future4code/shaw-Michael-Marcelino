@@ -1,0 +1,47 @@
+body{
+
+    font-family: 'Raleway', sans-serif;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(16,37,140,1) 100%);
+    color: white ;
+}
+
+.profile{
+    text-align: center;
+    margin-top: 20px;
+}
+.avatar{
+    width: 100px;
+    border-radius: 100px;
+    border: solid 3px white;
+    box-shadow:  0 0 20px white;
+}
+h1{
+    font-family: 'Architects Daughter', cursive;
+    font-weight:  100;
+    font-size: 24px;
+    margin-bottom: 2px;
+
+}
+h2{
+    font-size: 16px;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 20px 0;
+    
+}
+
+h1{
+    padding-top: 20px
+}
+.social img{
+    width: 33px;
+}
+.abouteMe{
+    text-align: center; 
+    margin: 0 25%;
+    
+}
