@@ -165,4 +165,27 @@ button a {
   display: block;
   justify-content: center;
 
+}/* projects */
+
+.conteudo{  
+    max-height: 530px;
+    overflow-y: scroll;
+    list-style: none;
+}
+.card {
+  padding: 30px;
+  border-radius: 5px;
+  margin: auto;
+  max-width: 840px;
+  height: 300px;
+}
+
+.conteudo li h3{
+  padding: 40px 0px 0px 400px;
+  
+}
+.conteudo li p{
+  max-width: 280px;
+  margin: 10px 0px 0px 400px;
+  opacity: 0.74;
 }
