@@ -1,0 +1,191 @@
+body {
+  font-family: "Raleway", sans-serif;
+  background: rgba(20, 17, 26, 0.986);
+  background: radial-gradient(
+    circle,
+    rgb(20 17 26, 1) 0%,
+    rgb(27, 27, 29) 100%
+  );
+  color: white;
+}
+/* menu navigation   
+*/
+.navbar {
+  background-color: rgba(12, 12, 12, 0);
+  position: fixed;
+  top: 20px;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  border: 3px white;
+  box-shadow: 0 0 10px white;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.profile {
+  text-align: center;
+  margin-top: 20px;
+}
+.avatar {
+  width: 100px;
+  margin-top: 46px;
+  border-radius: 100px;
+  border: solid 3px white;
+  box-shadow: 0 0 20px white;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+h2 {
+  font-size: 16px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 20px 0;
+  border-radius: 100px;
+  border: 3px black;
+  box-shadow: 0 0 10px black;
+  padding: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.social:hover {
+  border: 3px white;
+  box-shadow: 0 0 10px white;
+}
+.social li:hover {
+  border: 3px white;
+  box-shadow: 0 0 10px white;
+  border-radius: 100px;
+  border: 3px white;
+}
+
+/**
+    styles page AbouteMe
+*/
+
+h1 {
+  padding-top: 20px;
+}
+.ab-me {
+  font-size: 64px;
+}
+.abouteMe p {
+  text-align: center;
+  opacity: 0.74;
+  padding: 0px 40px 50px 50px;
+  max-width: 700px;
+}
+.social img {
+  width: 33px;
+}
+.abouteMe {
+  text-align: center;
+  margin: 0 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#with {
+  text-align: center;
+  padding-bottom: 8 px;
+}
+
+/* Style skills */
+#tecnologia {
+  text-align: center;
+}
+#univer{
+  width: 50px;
+  height: 50px;
+}
+.tech {
+  margin: 30px 0px 0px;
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+}
+.hard-skills {
+  display: -webkit-flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hard-skills li {
+  width: 400px;
+  height: 93px;
+  background: rgb(12, 12, 12);
+  border-radius: 5px;
+  margin: 20px 0px 0px;
+  list-style: none;
+}
+.hard-skills li img {
+  margin: -60px 0px 0px;
+  border-radius: 5px;
+  text-align: center;
+}
+.hard-skills li:hover {
+  border: solid 2px rgb(111, 43, 255);
+  border-radius: 7px;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(110, 43, 255);
+}
+button a {
+  text-decoration: none;
+}
+
+
+/* university */
+.hard-skills img{
+  width: 92px;
+  height: 92px;
+  display: block;
+  justify-content: center;
+
+}/* projects */
+
+.conteudo{  
+    max-height: 530px;
+    overflow-y: scroll;
+    list-style: none;
+}
+.card {
+  padding: 30px;
+  border-radius: 5px;
+  margin: auto;
+  max-width: 840px;
+  height: 300px;
+}
+
+.conteudo li h3{
+  padding: 40px 0px 0px 400px;
+  
+}
+.conteudo li p{
+  max-width: 280px;
+  margin: 10px 0px 0px 400px;
+  opacity: 0.74;
+}
