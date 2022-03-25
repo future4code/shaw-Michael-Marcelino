@@ -17,6 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Michael Douglas 
+          <h1> Fullstack developer</h1>
         </a>
       </header>
     </div>
