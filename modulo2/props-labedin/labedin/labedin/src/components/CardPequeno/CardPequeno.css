@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .card-pequeno{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 40vw;
+    height: 60px;
+    padding: 2px;
+    margin-bottom: 7px;
+    
+  
+}
+.card-pequeno img{
+    width: 30px;
+    margin-right:5px ;
+}
+p{
+    margin-left: 3px;
+}
