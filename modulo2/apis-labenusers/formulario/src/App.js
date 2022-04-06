@@ -1,69 +1,36 @@
-import axios from "axios";
 import React from "react";
-
-
+import TelaCadastraUsuario from "./Componentes/TelaCadasatraUsuario";
+import TelaListaUsuario from "./Componentes/TelaListaUsuario";
 
 export default class App extends React.Component {
   state = {
-    email: "",
-    inputName: "",
+    telaAutal: "lista",
   };
-  postPlaylist = () => {
-    const body = {
-      name: this.state.inputName,
-      email: this.state.email,
-    };
 
-    axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        body,
-        {
-          headers: {
-            Authorization: "Michael-Marcelino-shaw",
-          },
-        }
-      )
-      .then((res) => {
-        alert('usuario cadastrado com sucesso')
-        this.setState({
-          inputName: "",
-          email:""
-         
-        });
-      })
-      .catch((err) => {
-        //Alertar caso um erro aconteça
-        alert(err.response.data.message);
-      });
-  };
-  onChangeName=(event)=>{
-    this.setState({
-      inputName:event.target.value
-    })
+  escolheTela =()=>{
+    switch(this.state.telaAutal){
+      case "cadastro":
+        return <TelaCadastraUsuario irParaLista={this.irParaLista}/>
+      case "lista":
+        return <TelaListaUsuario irParaCadastro={this.irParaCadastro}/>
+      default:
+        <div>Erro 404 - page not found</div>
+    }
+  }
+  irParaCadastro =()=>{
+    this.setState({ telaAutal:"cadastro"})
 
   }
-  onChangeEmail=(event)=>{
-    this.setState({
-      email:event.target.value
-    })
+  irParaLista =()=>{
+    this.setState({telaAutal:"lista"})
 
   }
+
   render() {
     return (
-      <div className="App">
-        <div>
-          <a href="./Componentes/TrocaNome.jsx">
-            <button>Trocar de tela</button>
-          </a>
-
-          <div>
-            <input value={this.state.inputName} onChange={this.onChangeName} placeholder="Nome"></input>
-            <input value={this.state.email}  onChange={this.onChangeEmail} placeholder="E-mail"></input>
-            <button onClick={this.postPlaylist} >Criar Usuario</button>
-          </div>
-        </div>
+      <div>
+       {this.escolheTela()}
       </div>
-    );
+    )
   }
 }
