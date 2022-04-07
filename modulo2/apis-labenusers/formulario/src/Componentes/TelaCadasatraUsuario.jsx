@@ -12,6 +12,7 @@ export default class TelaCadastraUsuario extends React.Component {
     nome: "",
     email: "",
   };
+  // handle se usa sempre que for criar uma funcao que vai gerenciar um evento
   handleNome = (event) => {
     this.setState({ nome: event.target.value });
   };
@@ -33,7 +34,10 @@ export default class TelaCadastraUsuario extends React.Component {
       })
       .then((res) => {
         alert("Usuario Cadastrado com sucesso");
-        this.setState({ nome: "", email: "", });
+        this.setState({
+           nome: "",
+            email: ""
+           });
       })
       .catch((err) => {
         alert(err.response.data.message);
