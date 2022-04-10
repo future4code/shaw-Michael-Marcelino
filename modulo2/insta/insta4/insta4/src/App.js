@@ -13,10 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'Michael Douglas'}
-          fotoUsuario={'https://picsum.photos/50/51'}
-          fotoPost={'https://picsum.photos/200/150'}
+        <Posts://picsum.pho
+          fost={'https://picsum.photos/200/150'}
         />
       </MainContainer>
     );
