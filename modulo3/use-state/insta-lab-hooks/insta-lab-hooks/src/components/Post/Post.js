@@ -45,7 +45,7 @@ const Post = (props) => {
   const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
   const caixaDeComentario = comentando ? (
     // Componente com o input e botão de enviar novo comentario. Import dele na linha 5.
-    <SecaoComentario enviarComentario={this.enviarComentario}/>
+    <SecaoComentario enviarComentario={enviarComentario}/>
   ) : (
     // Funcao map sendo feita na propriedade comentarios do estado. Ou seja, está sendo pego todos os
     // comentários do estado para serem renderizados na tela, dentro do componente CommentContainer 
