@@ -20,9 +20,21 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [],
-      inputValue: 'Terminar exercicio de LS',
-      filtro: 'true'
+      tarefas: [
+        {
+          id: Date.now(), 
+          texto: 'Minha primeira tarefa',
+          completa: false
+        },
+        {
+          id: Date.now(), 
+          texto: 'Fazer exercicios fisicos hoje',
+          completa: true
+        }
+        
+      ],
+      inputValue: '',
+      filtro: 'pendentes'
     }
 
   componentDidUpdate() {
