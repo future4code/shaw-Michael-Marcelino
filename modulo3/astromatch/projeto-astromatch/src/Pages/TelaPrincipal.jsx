@@ -7,9 +7,9 @@ export function TelaPrincipal(props) {
 
   return (
     <div>
-      <Header  dados={props.currentPage} funcao ={props.handleChangeScreen}/>
-      <Card  nome={props.nome} trocaTela={()=>props.handleChangeScreen}/>
-      <Botoes/>
+      <Header/>
+      <Card/>
+      <Botoes />
     </div>
   );
 }
