@@ -5,13 +5,13 @@ import { MdSupervisorAccount } from "react-icons/md";
 
 
 
-export function Header (props){
+export function Header (){
     
     return(
         <nav className="navbar">            
             <MdSupervisorAccount  className="change"   />         
             <AiFillFire className="fire" />
-            <IoIosChatbubbles className="change" />
+            <IoIosChatbubbles className="change"  />
       
         </nav>
          
