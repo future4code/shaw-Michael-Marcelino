@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { BsSuitHeartFill, BsXLg, BsStarFill } from "react-icons/bs"
 import { BASE_URL } from "../Constants/urls"
 import axios from "axios"
-import { Header } from "../Componentes/Header"
+
 
 export function TelaPrincipal(props) {
   const [profile, setProfile] = useState({})
@@ -38,7 +38,7 @@ export function TelaPrincipal(props) {
 
   return (
     <div>
-      <Header />
+      
       <div className="photo-and-actions">
         <div className="photo" >
           <img

@@ -1,13 +1,8 @@
 import React, {useState }from "react";
 import "./style.css";
 import { TelaPrincipal } from './Pages/TelaPrincipal';
-import { TelaMatchs } from './Pages/TelaMatchs';
-import { IoIosChatbubbles } from 'react-icons/io';
 import { Trash } from './Componentes/Trash';
-
-
-
-
+import { Header } from './Componentes/Header';
 
 export default function App() {
   
@@ -23,8 +18,8 @@ export default function App() {
   
  
   return (
-    <div>       
-       <IoIosChatbubbles  onClick ={handleChangeScreen} >Trocar de tela</IoIosChatbubbles> 
+    <div>   
+      <Header nome={handleChangeScreen}  />    
        {currentPage === "signUp" ? <TelaPrincipal/> : <TelaMatchs/>}   
         <Trash/>
     </div>

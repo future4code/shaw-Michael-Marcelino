@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { BASE_URL } from "../Constants/urls"
-import { Header } from "./Header"
+
 
 export function Matches() {
   const [matches, setMatches] = useState([])
@@ -33,7 +33,7 @@ export function Matches() {
   })
   return (
     <div>
-      <Header />
+     
       <div>
         <div className="photo-and-actions">
           <div className="photo">{mostraMatches}</div>
