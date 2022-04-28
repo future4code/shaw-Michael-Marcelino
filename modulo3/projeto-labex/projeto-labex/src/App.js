@@ -6,8 +6,7 @@ function App() {
   return (
     <div>
       <Router/>
-        <h2> inicio projeto</h2>
-       
+             
     </div>
   )
 }
