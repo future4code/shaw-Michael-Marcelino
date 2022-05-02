@@ -1,31 +1,34 @@
-
-
-export const goToLisTriPage = (navigate) => {
-
-    navigate("/trips/list")
-  }
- export  const goLoginPage =(navigate)=>{
-    navigate("/login")
- }
-export  const goToBack =(navigate)=>{
-    navigate(-1)
- }
- export const goToSubscribe =(navigate)=>{
-    navigate("/trips/application")
+export const goBackHome = (navigate) =>{
+  navigate('/')
 }
-export const goToAdminHomePage =(navigate)=>{
-    navigate("admin")
- }
- export const goToCreateTtip =(navigate)=>{
-   navigate("/admin/trips/create")
+export const goToCreateTrip= (navigate) =>{
+  navigate('/admin/trips/create')
 }
-export const goToLogout =(navigate)=>{
-   navigate("/login")
-}
-export const goToDetailPage=(navigate)=>{
-    navigate("/admin/trips/:id")
+export const goToLogout= (navigate) =>{
+  navigate('/login')
 }
 
- export const goToDetails =(navigate)=>{
-   navigate("/admin/trips/:id")
+export const goBackList = (navigate) =>{
+  navigate(-1)
+}
+export const goBackAdmin = (navigate) =>{
+  navigate(-1)
+}
+export const goToList = (navigate) =>{
+  navigate('/trips/list')
+}
+export const goToLogin = (navigate) =>{
+  navigate('/login')
+}
+
+export const goToForm = (navigate) =>{
+  navigate('/trips/application')
+}
+
+export const goAdmin =(navigate)=>{
+  navigate("/admin/trips/list")
+}
+
+export const goDetails =(navigate)=>{
+  navigate("/admin/trips/:id")
 }
