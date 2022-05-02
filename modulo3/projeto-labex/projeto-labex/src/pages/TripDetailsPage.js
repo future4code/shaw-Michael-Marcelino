@@ -1,51 +1,55 @@
-import {useNavigate} from 'react-router-dom'
-import { goBackHome} from "../routes/coordinator";
-import React,{ useState }  from "react";
-import axios from 'axios';
+import axios from "axios";
+import React,{ useEffect, useState }  from "react";
+//import { useNavigate } from "react-router-dom";
+import { useProtectedPage } from "../hooks/useProtectedPage";
+import styled from "styled-components";
 import { BASE_URL } from '../Constant/constants';
 
-
-export default function LoginPage() {
-  const navigate = useNavigate()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+const Card = styled.div`
+  border: 1px solid black;
+`
 
 
+export default function TripDetailsPage () {
+    useProtectedPage()
+    const [details, setDetails] = useState({})
 
-  const getEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const getPassword = (event) => {
-    setPassword(event.target.value);
-  };
+    const getTripDetail = (id) =>{
+        const token= localStorage.getItem('token')
 
-  const onSubmitLogin = () => {
-    const body ={
-      email: email,
-      password: password
+        axios.get(`${BASE_URL}/trip/${id}`,
+        {headers:{
+            auth: token
+        }})
+        .then((res) => {
+            console.log('deu certo',res.data.trip);
+        }).catch((err) =>{
+            console.log('deu erro', err.response);
+        })
     }
-    axios.post(`${BASE_URL}trips`, body)
-  .then((res) => {
-      console.log('deu certo',res.data.token);
-      localStorage.setItem('token', res.data.token)
-      navigate("/admin/trips/list") 
-      
-  }).catch((err) => {
-    console.log('deu certo', err.response);
-  })
-  }
+    
+        useEffect (() => {  
 
+    },[])
+    const render = details.map((trip)=>{
+        return(
+          <Card>
+            
+            <p key={trip.id}>{trip.name}</p>
+           
   
+           
+          </Card>
+        )
+      })
+
+    
+
     return (
-      <div>
-        <h2>Login</h2>
-        <input placeholder="E-mail" type='email' onChange={getEmail} value={email}/>
-        <input placeholder="Password" type='password' onChange={getPassword} value={password}/>
-        <button onClick={() => goBackHome(navigate)}>Voltar</button>
-        <button onClick={onSubmitLogin}>Entrar</button>
-       
+        <>
+        <h2>detalhes viagem</h2>
+        <p>{render}</p>
         
-        
-      </div>
-    );
-  }
+        </>
+    )
+}
