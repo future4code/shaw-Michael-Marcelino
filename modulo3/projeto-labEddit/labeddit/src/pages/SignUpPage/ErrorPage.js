@@ -1,9 +1,11 @@
 import React from "react";
 
-const LoginPage =()=>{
+const ErrorPage =()=>{
     return(
         <>
+
+        Deu ruim!
         </>
     )
 }
-export default LoginPage
+export default ErrorPage
