@@ -1,15 +1,15 @@
-
 import { createTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import { primaryColor, neutralColor } from './colors';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: primaryColor,
+      contrastText:"white"
     },
-    secondary: {
-      main: green[500],
-    },
-  },
-});
+    text:{
+      primary: neutralColor
+    }
+  }
+})
+export default theme
