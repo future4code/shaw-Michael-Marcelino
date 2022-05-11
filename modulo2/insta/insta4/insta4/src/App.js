@@ -13,15 +13,13 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
+
         <Post
-<<<<<<< HEAD
           nomeUsuario={'paulinha'}
-=======
-          nomeUsuario={'Michael Douglas'}
->>>>>>> estados-insta4
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
-        />
+
+         fost={'https://picsum.photos/200/150'}/>
       </MainContainer>
     );
   }
