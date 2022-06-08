@@ -1,140 +1,137 @@
-```
-CREATE TABLE Actor (
-    id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR (255) NOT NULL,
-    salary FLOAT NOT NULL,
-    birth_date DATE NOT NULL,
-    gender VARCHAR(6) NOT NULL
-);
-```
-```
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "002", 
-  "Glória Pires",
-  1200000,
-  "1963-08-23", 
-  "female"
-);
-```
-```
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "001", 
-  "Tony Ramos",
-  400000,
-  "1948-08-25", 
-  "male"
-);
-```
-```
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "003", 
-  "Fernanda Montenegro",
-  300000,
-  "1929-10-19", 
-  "female"
-);
-```
-```
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "004", 
-  "Antônio Fagundes",
-  400000,
-  "1949-04-18", 
-  "male"
-);
-```
-```
-SELECT* FROM Actor;
-SELECT id, name from Actor WHERE gender = "male"
+### Exercicio 1
+
+a) vai apagr a coluna de salario
+
+```sql
+    ALTER TABLE Actor DROP COLUMN salary;
 ```
 
+b)vai mudar o campo de genero para sexo;
 
-b) Escreva uma query com os atores que não comecem com a letra "A" e tenham o salário maior do que R$350.000,00
-
-```
-SELECT * FROM Actor
-WHERE (name NOT LIKE "A%" ) AND salary > 350000
+```sql
+   ALTER TABLE Actor CHANGE gender sex VARCHAR(6);
 ```
 
-c) *Escreva uma query com os atores que possuam "G" ou "g" em qualquer parte do nome.*
+c) vai alterar o campo de genero para um VARCHAR DE 255 CARACTERES
 
-```
-SELECT * FROM Actor
-WHERE (name LIKE "%G%" OR "%G%" ) ;
-```
-
-d) *Escreva uma query com os atores que tenham a letra "a" ou "A" ou "g" ou "G" no nome e o salário entre R$350.000,00 e R$900.000,00*
-
-```
-SELECT * FROM Actor
-WHERE (name LIKE "%G%" OR "%g%" OR NAME LIKE"%A%" OR "%a%") 
-AND salary BETWEEN 350000 AND 900000;
+```sql
+    ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
 ```
 
-a) Escreva a query que cria essa tabela. Para sinopse, utilize o tipo TEXT, pesquise sobre ele se precisar. Explique a query resumidamente.
+d) _Agora, altere a coluna `gender` da tabela `ACTOR` para que ele aceite strings com até 100 caracteres_
 
+- Dicas
 
-Crie 4 filmes com as seguintes informações: 
-```
-INSERT INTO Filmes (id, nome, sinopse, data_lancamento, avaliacao)
-VALUES(
-  "002",
-  ``` 
+  d)
 
-exercicio 5
-a) Retorne o id, título e avaliação a partir de um id específico;
-```
-SELECT id, nome,avaliacao FROM Filmes
-WHERE id=3;
-```
+  ```sql
+  ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
+  ```
 
-b) Retorne um filme a partir de um nome específico;
-```
-SELECT * FROM Filmes
-WHERE nome="Doce de mãe";
-```
+  ### Exercicio 2
 
-c) Retorne o id, título e sinopse dos filmes com avaliação mínima de 7
+  a) _Escreva uma query que atualize o nome e a data de nascimento do ator com o id `003`_
+
+  ```
+  UPDATE Actor
+  SET name = "Michael Douglas",birth_date="1993-11-16", gender="male"
+  WHERE id = "003"
+  ```
+
+b) _Escreva uma query que atualize o nome da atriz `Juliana Paes` para `JULIANA PAES`. Então, escreva outra query para voltar ao nome anterior._
 
 ```
-SELECT id, nome,sinopse  FROM Filmes
-WHERE avaliacao <= 7;
+  UPDATE Actor
+  SET name=  UPPER(name)
+  WHERE id = "005"
 ```
 
-Exercício 7
-
-a) Retorna um filme cujo título contenha a palavra `vida`
 ```
-SELECT * FROM Filmes
-WHERE title LIKE "%vida%";
+  UPDATE Actor
+  SET name=  lower(name)
+  WHERE id = "005"
 ```
 
-b) Realize a pesquisa de um filme, ou seja: pesquise se o termo de busca está contido no título ou na sinopse. Utilize qualquer `TERMO DE BUSCA` para exemplificar.
+c) _Escreva uma query que atualize todas as informações do ator com o id `005`_
+
+d) _Escreva uma query em que você tente atualizar um dado da tabela que não existe (com um id inválido, por exemplo). Teste, 
+anote e explique o resultado._
 
 ```
-SELECT * FROM Filmes
-WHERE nome LIKE "%doce%" OR
- sinopse LIKE "%doce%";
+  UPDATE Actor
+  SET name="Nastia", salary=500000, birth_date="1996-04-05",gender="female",filhos="tres"
+  WHERE id = "00
+
+  ```
+  ```
+  09:15:01	UPDATE Actor SET name="Nastia", salary=500000, birth_date="1996-04-05",gender="female",filhos="tres" WHERE id = "005"	Error Code: 1054. Unknown column 'filhos' in 'field list'	0,205 sec
  ```
 
-c) Procure por todos os filmes que já tenham lançado
-
-```
-SELECT * FROM Filmes
-WHERE data_lancamento > "2000-01-01";
-```
-
-d) Procure por algum filme que já tenha lançado, com o termo de busca contido no título ou sinopse e com a avaliação maior do que `7`.
-
-
-
-
-```
-SELECT * FROM Filmes
-WHERE data_lancamento > "2000-01-01" AND nome LIKE "%doce%" OR
- sinopse LIKE "%doce%" AND avaliacao < CURDATE() ;
  ```
+ A Query retorna o erro 1054, que significa que o busca que esta tentando ser alterado nao existe, logo nao eh possivel alterar o mesmo.
+ ```
+
+ ### Exercício 3
+ a) *Escreva uma query que apague a atriz com o nome `Fernanda Montenegro`*
+
+ ```
+    DELETE FROM Actor WHERE id="007";
+    ```
+
+
+b) *Escreva uma query que apague todos os atores (do gênero `male`) com o salário maior do que R$1.000.000,00*
+```
+DELETE FROM Actor
+WHERE
+	gender = "male" AND
+	salary <1000000
+  ```
+
+  ### Exercicio 4
+  a) *Escreva uma query que pegue o maior salário de todos os atores e atrizes*
+  ```
+      SELECT MAX(salary) FROM Actor;
+  ```
+b) *Escreva uma query que pegue o menor salário das atrizes*
+```
+    SELECT MIN(salary) FROM Actor WHERE gender="female";
+ ```
+
+c) *Escreva uma query que pegue a quantidade de atrizes*
+
+```
+    SELECT COUNT(*) FROM Actor WHERE gender = "female";
+```
+
+d) *Escreva uma query que pegue a soma de todos os salários*
+```
+    SELECT SUM(salary) FROM Actor WHERE gender="female";
+
+```
+### Exercicio 5 
+a) *Releia a última query. Teste-a. Explique o resultado com as suas palavras*
+```
+    SELECT id, name FROM Actor
+    ORDER BY name DESC;
+```
+b) *Faça uma query que retorne somente o id e o nome dos atores em ordem decrescente alfabética*
+
+```
+    SELECT id, name FROM Actor
+    ORDER BY name DESC;
+```
+c) *Faça uma query que retorne todos os atores ordenados pelo salário*
+```
+     SELECT id,name FROM Actor  ORDER BY name DESC;
+```
+d) *Faça uma query que retorne os atores com os três maiores salarios*
+```
+    SELECT * FROM Actor
+    ORDER BY salary;
+```
+e) *Faça uma query que retorne a média de salário por gênero*
+
+```
+    SELECT AVG(salary), gender FROM Actor
+    GROUP BY gender;
+```
