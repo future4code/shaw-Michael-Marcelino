@@ -3,6 +3,8 @@ import knex from 'knex'
 import dotenv from 'dotenv'
 import createUser from './endpoints/createUser'
 import getUserById from './endpoints/getUserById'
+import editUser from './endpoints/editUser'
+import createTask from './endpoints/createTask'
 dotenv.config()
 
 export const connection = knex({
@@ -22,6 +24,8 @@ app.use(express.json())
 
 app.put('/user',createUser)
 app.get('/user/:id',getUserById)
+app.post('/user/edit/:id',editUser)
+app.put('/task',createTask)
 
 app.listen(3003,()=>{
     console.log("servidor rodando na porta 3003");
