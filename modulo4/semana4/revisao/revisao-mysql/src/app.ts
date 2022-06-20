@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.listen(3003, ()=>{
-    console.log("Server running port 303");
+    console.log("Server running port 3003");
 })
 
 export default app
