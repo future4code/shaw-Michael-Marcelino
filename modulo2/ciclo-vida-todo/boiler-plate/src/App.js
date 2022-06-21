@@ -37,29 +37,6 @@ class App extends React.Component {
       filtro: 'pendentes'
     }
 
-  componentDidUpdate() {
-
-  };
-
-  componentDidMount() {
-
-  };
-
-  onChangeInput = (event) => {
-
-  }
-
-  criaTarefa = () => {
-
-  }
-
-  selectTarefa = (id) => {
-
-  }
-
-  onChangeFilter = (event) => {
-
-  }
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {

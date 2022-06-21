@@ -49,7 +49,7 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    console.log('Curtiu!')
+    console.log('Curtiu!!!')
   }
 
   onClickComentario = () => {
