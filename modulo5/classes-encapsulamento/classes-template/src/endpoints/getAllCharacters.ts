@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
-import Character  from "../data/Character"
-import CharacterDatabase from "../data/CharacterDatabase"
+import connection from "../connection"
+import { character } from "../classes"
 
 export default async function getAllCharacters(
    req: Request,
@@ -8,10 +8,9 @@ export default async function getAllCharacters(
 ): Promise<void> {
 
    try {
-      const characterDB = new CharacterDatabase()
+      
+      const characters: character[] = await connection("character").select()
 
-      const characters = await characterDB.getAllCharacters()
-           
       res.send(characters)
    } catch (error: any) {
       res.status(500).send(error.sqlMessage || error.message)
