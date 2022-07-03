@@ -1,5 +1,5 @@
 import {v4} from "uuid"
 
-const genereteId = () => v4()
+const generateId = () => v4()
 
-export default genereteId
+export default generateId
