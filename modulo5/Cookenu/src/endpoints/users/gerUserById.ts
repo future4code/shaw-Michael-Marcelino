@@ -1,33 +1,32 @@
-import {Request,Response} from "express"
-import { getTokenData } from '../../services/authenticator';
-import connection from '../../connection';
-import { userTableName } from '../../types';
+import { Request, Response } from "express"
+import { getTokenData } from "../../services/authenticator"
+import connection from "../../connection"
+import { userTableName } from "../../types"
 
+export default async function getUserById(
+  req: Request,
+  res: Response
+): Promise<void> {
+  try {
+    const token: string = req.headers.authorization!
+    const userId  = req.params.id
 
-export default async function getUserById(req:Request,res:Response):Promise<void>{
-    try {
-        
-        const token:string = req.headers.authorization!
-        const {userId} = req.params
+    getTokenData(token)
 
-        getTokenData(token)
+    const [user] = await connection(userTableName)
+    .where({ id: userId })
 
-        const [user] = await connection(userTableName)
-        .where({id:userId})
+    const { id, email, name } = user
 
-        const {id,email,name} = user
-        res.send({id,email,name})
+    res.send({ id, email, name })
+    
+  } catch (error: any) {
+    console.log(error.message)
 
-
-    } catch (error:any) {
-        console.log(error.message)
-       
-        if(res.statusCode === 200){
-            res.status(500).send("Internal server error")
-        }else{
-            res.send(error.message)
-        }
+    if (res.statusCode === 200) {
+      res.status(500).send("Internal server error")
+    } else {
+      res.send(error.message)
     }
-
-} 
-
+  }
+}
