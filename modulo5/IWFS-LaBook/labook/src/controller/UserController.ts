@@ -1,32 +1,31 @@
 import { Request, Response } from "express";
-import UserBussines from "../Bussines/UserBussines";
-import {userInput } from "../types/user";
+import { SignupInputDTO } from '../entities/User';
+import UserBussines from '../Bussines/UserBussines';
 
-class UserController {
+export  class UserController{
 
     async signUp(req: Request, res: Response) {
         try {
-            const { name, nickname, email, password, role } = req.body
+            let message = "Success!"
+            const { name, email, password } = req.body
 
-            const newUser: userInput = {
-                name,
-                nickname,
-                email,
-                password,
-                role
+            const input :SignupInputDTO ={
+               name:req.body.name ,
+               email:req.body.email,
+               password:req.body.password
             }
-
-            // instanciar a classe bussines
+      
             const userBussines = new UserBussines()
-
-            // chamar o metodo de signUp , que esta no bussines e ele retorna um token
-            const token = await userBussines.signUp(newUser)
-
-            res.status(201).send({ message: "usuario criado com sucesso", token })
-
-        } catch (error: any) {
-            res.status(500).send({ message: error.message })
-        }
+            const token = userBussines.signUp(input)
+            
+            res.status(201).send({ message, token })
+      
+         } catch (error:any) {
+            res.statusCode = 400
+            let message = error.sqlMessage || error.message
+      
+            res.send({ message })
+         }
     }
 
     async login(req: Request, res: Response) {

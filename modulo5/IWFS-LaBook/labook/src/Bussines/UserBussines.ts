@@ -1,61 +1,41 @@
-import { generateToken } from "../services/authenticator";
-import { hash } from "../services/hashManager";
-import { generateId } from "../services/idGenerator";
-import { userInput } from "../types/user";
-import UserData from '../data/UserData'
+import { SignupInputDTO, User } from '../entities/User';
+import { IdGenerateId } from "../services/idGenerator";
+import { HashManager } from "../services/hashManager";
+import { UserDataBase } from '../data/UserDataBase';
+import { TokenManager } from '../services/authenticator';
 
-class UserBussines {
 
-    // metodo da classe
-    async signUp(user:userInput) {
-
-        const { name, nickname, email, password, role } = user
-
-        // 1 regra de negocio - validar os valores 
-        if (
-            !name ||
-            !nickname ||
-            !email ||
-            !password ||
-            !role
-        ) {
-            throw new Error('Preencha os campos "name","nickname", "email" e "password"')
+export class UserBussines {
+  // metodo da classe
+  async signUp(input: SignupInputDTO): Promise<string> {
+  try {
+    
+        if (!input.name || !input.email || !input.password) {
+            throw new Error('"name", "email" and "password" must be provided');
         }
+        const idGenerator = new IdGenerateId();
+        const id: string = idGenerator.generateId();
+        const hashManager = new HashManager();
 
-        // 2 regra de negocio - gerar meu id 
-        const id: string = generateId()
+        const cypherPassword = await hashManager.hash(input.password);
 
-        // 3 regra de negocio - fazer o hash da senha
-        const cypherPassword = await hash(password);
-
-       
-        // 4 regra de negocio - inserir os valores no banco de dados
-        const userData = new UserData()
-        
-         await userData.insertUser({
+        const user:User={
             id,
-            name,
-            nickname,
-            email,
-            password: cypherPassword,
-            role
-        })
+            name: input.name,
+            email: input.email,
+            password: cypherPassword
+        }
+        const userDatabase = new UserDataBase()
+        await userDatabase.insertUser(user)
 
-        // 5 regra de negocio - gerar o token
-        const token: string = generateToken({
-            id,
-            role: role
-        })
+        const tokenManager = new TokenManager()
+        const token: string = tokenManager.generateToken({ id });
 
         return token
-
-    }
-
-    // metodo da classe
-    async login() {
-
-    }
-
+        }
+  } catch (error) {
+    
+  }
 }
+export default UserBussines;
 
-export default UserBussines
