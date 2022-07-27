@@ -4,6 +4,7 @@ export const MainContainer = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
+
 `
 export const ContainerInputButton = styled.div`
 display: flex;
@@ -13,6 +14,8 @@ margin-top: 60px;
     flex-direction: column;
     width: 250px;
     overflow: hidden;
+    border-radius: 15px;
+border: 1px solid black;
 }
 `
 
@@ -25,6 +28,7 @@ export const ImageIcon = styled.img`
 width: 50px;
 height: 50px;
 margin: 10px;
+
 `
 
 export const IconHistory = styled.div`
@@ -49,5 +53,6 @@ export const ConstainerIcon = styled.div`
 display: flex;
 align-items: center;
 flex-direction: row-reverse;
-
+border-radius: 15px;
+border: 1px solid black;
 `
