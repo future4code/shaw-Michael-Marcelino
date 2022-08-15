@@ -13,8 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
-        <Post fost={'https://picsum.photos/200/150'}
-        />
+
       </MainContainer>
     );
   }

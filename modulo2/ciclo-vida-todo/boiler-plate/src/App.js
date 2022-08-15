@@ -25,29 +25,6 @@ class App extends React.Component {
       filtro: 'true'
     }
 
-  componentDidUpdate() {
-
-  };
-
-  componentDidMount() {
-
-  };
-
-  onChangeInput = (event) => {
-
-  }
-
-  criaTarefa = () => {
-
-  }
-
-  selectTarefa = (id) => {
-
-  }
-
-  onChangeFilter = (event) => {
-
-  }
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
