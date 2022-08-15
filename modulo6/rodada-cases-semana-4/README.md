@@ -15,8 +15,9 @@ O objetivo é construir uma aplicação web front-end que mostre os Resultados d
 - [material ui](https://mui.com/)
 - [API utilizada no projeto](https://brainn-api-loterias.herokuapp.com/api/v1/docs/)
 ## 🔗 Link Surge: 
-Acesse nosso site [clicando aqui!](https://brainn
--mike.surge.sh/login)
+Acesse nosso site [clicando aqui!](https://brainn-mike.surge.sh/)
 <br>
 
 ## 📸 Imagens:
+![Captura de ecrã de 2022-08-15 15-38-21](https://user-images.githubusercontent.com/80003041/184656287-bf1f427e-fbb8-4aa5-b32c-975b63a30037.png)
+![Captura de ecrã de 2022-08-15 15-38-35](https://user-images.githubusercontent.com/80003041/184656292-7f15d7a5-fd7f-4ff3-b460-2f741a6149a6.png)
