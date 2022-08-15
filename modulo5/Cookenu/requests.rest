@@ -1,0 +1,39 @@
+POST  http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"michael",
+    "email":"michael@gmail.com",
+    "password":"123"
+}
+
+###
+# @name login
+POST  http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"nastia@gmail.com",
+    "password":"123"
+}
+
+###
+# @name getProfile
+http://localhost:3003/user/profile
+Authorization: {{login.response.body.token}}
+
+###
+
+GET http://localhost:3003/user/{{getProfile.response.body.id}}/profile
+Authorization: {{login.response.body.token}}
+###
+
+POST  http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: {{login.response.body.token}}
+
+{
+    "title":"sopa da pedra",
+    "description":"Sopa de pedra mas sem pedra"
+    
+}

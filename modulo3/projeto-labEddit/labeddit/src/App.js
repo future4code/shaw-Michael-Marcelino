@@ -3,7 +3,11 @@ import { Route } from "react-router-dom";
 function App() {
   return (
     <div>
+<<<<<<< HEAD
        <Route/> 
+=======
+       <Route/>
+>>>>>>> master
     </div>
   );
 }
