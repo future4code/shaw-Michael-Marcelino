@@ -1,7 +1,7 @@
-export function goToHome(history) {
-    history('/')
+export function goToHome(navigate) {
+  navigate("/");
 }
 
-export function goToMovieDetails(history, id) {
-    history(`/movie/${id}`)
+export function goToMovieDetails(navigate, id) {
+  navigate(`/movie/${id}`);
 }
