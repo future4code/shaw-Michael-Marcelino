@@ -1,0 +1,13 @@
+{
+  "name": "template-node-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "search":"clear && node ./search.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Michael Douglas",
+  "license": "ISC"
+}
