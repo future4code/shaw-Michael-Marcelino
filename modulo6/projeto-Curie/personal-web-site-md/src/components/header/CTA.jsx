@@ -1,13 +1,14 @@
 import React from 'react';
-import CV from '../../assets/cv.pdf'
+import CV from '../../assets/cv_MICHAEL.pdf'
+import { Cta } from './styled';
 
 function CTA() {
     return (
-        <div className='cta'>
+        <Cta >
             <a href={CV} download  className='btn'>Dowload CV</a>
             <a href='#contact'  className='btn btn-primary'>Let's Talk</a>
 
-        </div>
+        </Cta>
     );
 }
 

@@ -1,27 +1,28 @@
 import React from "react";
-import "./header.css";
 import CTA from "./CTA";
 import ME from "../../assets/me.png";
 import HeaderSocial from "./HeaderSocial";
+import { HeaderContainer, HeaderSoc, Me, ScroolDown } from './styled'
 
 const Header = () => {
   return (
-    <header>
-      <div className="container header__container">
+    <HeaderSoc>
+      <HeaderContainer className="container ">
         <h5>Hello I'm</h5>
         <h1>Michael Douglas </h1>
         <h5 className="text-light">Fullstack Developer</h5>
+        {/*  <h5 className="text-light">Passionate about technology and programming.</h5> */}
         <CTA />
 
         <HeaderSocial />
 
-        <div className="me">
+        <Me >
           <img src={ME} alt="me" />
-        </div>
+        </Me>
 
-        <a href="#contact" className="scroll__down ">Scroll Down</a>
-      </div>
-    </header>
+        <ScroolDown  href="#contact" >Scroll Down</ScroolDown>
+      </HeaderContainer>
+    </HeaderSoc>
   );
 };
 

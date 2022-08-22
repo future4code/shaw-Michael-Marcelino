@@ -1,9 +1,8 @@
 import React from 'react';
-import './about.css'
-import ME  from '../../assets/me-about.jpg'
-import {FaAward} from 'react-icons/fa'
-import {FiUsers} from 'react-icons/fi';
-import {VscFolderLibrary} from 'react-icons/vsc';
+import ME  from '../../assets/eiffel.jpg'
+
+import { AboutCard, AboutCards, AboutContainer, AboutContent, AboutMe, AboutMeImage, FaAwards, VscFolderLibrarys } from './styled';
+import { FiUser } from 'react-icons/fi';
 
 
 function About() {
@@ -11,37 +10,40 @@ function About() {
         <section id='about'>
             <h5>Get To Know</h5>
             <h2>About Me</h2>
-            <div className="container about__container">
-                <div className="about__me">
-                  <div className="about__me-image">
-                  <img  src={ME} alt='About Image'/>
-                  </div> 
-                </div>
-                <div className="about__content">
-                    <div className="about__cards">
-                        <article className='about__card'>
-                            <FaAward className='about__icon'/>
+            
+            <AboutContainer className="container ">
+                <AboutMe >
+                  <AboutMeImage >
+                    <img  src={ME} alt='About Image'/>
+                  </AboutMeImage> 
+                </AboutMe>
+                  
+                <AboutContent >
+                    <AboutCards> 
+                        <AboutCard >
+                            <FaAwards className='about__icon'/>
                             <h5>Expirience</h5>
                             <small>1+ Years Working</small>
-                        </article>
+                        </AboutCard>
                         
-                        <article className='about__card'>
-                            <FiUsers className='about__icon'/>
+                        <AboutCard >
+                            <FiUser className='about__icon'/>
                             <h5>Clients</h5>
                             <small>200+clients</small>
-                        </article>
+                        </AboutCard>
                         
-                        <article className='about__card'>
-                            <VscFolderLibrary className='about__icon'/>
+                        <AboutCard >
+                            <VscFolderLibrarys className='about__icon'/>
                             <h5>Expirience</h5>
                             <small>1+ Years Working</small>
-                        </article>
-                       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam recusandae iste quaerat debitis eaque ad delectus, itaque ex, deserunt eos dolorum animi optio voluptatum? Ipsum sapiente distinctio natus consequuntur dicta.</p>
+                        </AboutCard>
+                       
+                    </AboutCards>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam recusandae iste quaerat debitis eaque ad delectus, itaque ex, deserunt eos dolorum animi optio voluptatum? Ipsum sapiente distinctio natus consequuntur dicta.</p>
 
                        <a href='#contact' className='btn btn-primary' >Let's Talk</a>
-                    </div>
-                </div>
-            </div>
+                </AboutContent>
+            </AboutContainer>
         </section>
     );
 }
