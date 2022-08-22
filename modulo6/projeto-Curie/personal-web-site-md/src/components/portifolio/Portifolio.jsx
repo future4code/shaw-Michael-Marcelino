@@ -64,7 +64,7 @@ const Portifolio = () => {
                 </PortifolioItem>
                 <PortifolioItem className='portifolio__items'>
                     <PortifolioItemImatge className="portifolio__item-image">
-                        <img src={MEGA_SENA} alt='future eats'/>
+                        <img src={MEGA_SENA} alt='future eats' />
                     </PortifolioItemImatge>
                         <h3>This is a portifolio item title</h3>
                         <PortifolioItemImageCta className="portifolio_item-cta">
