@@ -30,7 +30,7 @@ export const PortifolioItemImatge = styled.div`
   border-radius: 1.5rem;
     overflow: hidden;
     h3 {
-    margin:  1.2rem 0 2rem;
+    margin:  3.2rem 0 2rem;
 }
 `;
 export const PortifolioItemImageCta = styled.div`
