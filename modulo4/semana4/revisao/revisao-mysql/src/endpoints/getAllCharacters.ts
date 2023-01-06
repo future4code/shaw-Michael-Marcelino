@@ -25,6 +25,7 @@ export default async function getAllCharacters(
     
 } catch (error) {
     res.status(500).send("Unexpected server error")
+
     
 }
 }
