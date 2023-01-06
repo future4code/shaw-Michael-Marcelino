@@ -13,12 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
-<<<<<<< HEAD
-       
-=======
-        <Post fost={'https://picsum.photos/200/150'}
-        />
->>>>>>> master
+
       </MainContainer>
     );
   }
